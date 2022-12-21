@@ -41,6 +41,8 @@ public class Copie {
 	}
 	
 	public void CalculerNote(){
+		noteFinale = 0;
+		
 		if (copieEstComplete()) {
 			for(int i = 0; i < nbQuestion; i++)
 				noteFinale += (nivQuestion[i]  * coeffQuestion[i]) / nivMax; 
