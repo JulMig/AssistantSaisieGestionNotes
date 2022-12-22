@@ -1,8 +1,10 @@
 package fonctionnalite;
 
 public class Eleve {
-	String nom;
-	String prenom;
+	private String nom;
+	private String prenom;
+	private Copie[] copies = new Copie[50];
+	private int nbCopie = 0;
 	
 	public Eleve(String nom, String prenom) {
 		this.nom = nom;
@@ -16,6 +18,21 @@ public class Eleve {
 	public String getPrenom() {
 		return prenom;
 	}
+	
+	public void ajouterCopie(Copie copie) {
+		if (nbCopie < 50) {
+			copie.setEleve(this);
+			copies[nbCopie] = copie;
+			nbCopie += 1;
+		}
+	}
+		
+	public int calculerMoyenne() {
+		int moyenne = 0;
+		//TODO
+		return moyenne;
+	}
+	
 	
 	
 
