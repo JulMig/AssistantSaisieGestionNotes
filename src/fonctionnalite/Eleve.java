@@ -34,7 +34,7 @@ public class Eleve {
 	}
 	
 	public void afficherCompteRendu() {
-		System.out.println(nom + " " + prenom + "\n\n");
+		System.out.println(nom + " " + prenom + "\n");
 		for(int i = 0; i < nbCopie; i++) {
 			System.out.println(copies[i].getNomEvaluation() + " : " + copies[i].getNoteFinale());
 			
