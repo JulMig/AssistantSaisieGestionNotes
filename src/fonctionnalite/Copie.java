@@ -1,6 +1,7 @@
 package fonctionnalite;
 
 public class Copie {
+	private String nomEvaluation = "";
 	private float noteFinale = 0;
 	
 	private int nivMax;
@@ -20,7 +21,16 @@ public class Copie {
 		for(int i = 0; i < nbQuestion; i++) nivQuestion[i] = -1;
 	}
 	
+	protected void setNomEvaluation(String nomEvaluation){
+		this.nomEvaluation = nomEvaluation;
+	}
+	
+	public String getNomEvaluation() {
+		return nomEvaluation;
+	}
+	
 	public float getNoteFinale() {
+		calculerNote();
 		return noteFinale;
 	}
 	
@@ -40,7 +50,7 @@ public class Copie {
 		this.eleve = eleve;
 	}
 	
-	public void CalculerNote(){
+	public void calculerNote(){
 		noteFinale = 0;
 		
 		if (copieEstComplete()) {

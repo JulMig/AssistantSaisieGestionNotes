@@ -18,6 +18,7 @@ public class Evaluation {
 	
 	public void ajouterCopie(Copie copie) {
 		if (maxCopie < nbCopie) {
+			copie.setNomEvaluation(nomEvaluation);
 			copieEleve[nbCopie] = copie;
 			nbCopie += 1;
 		}

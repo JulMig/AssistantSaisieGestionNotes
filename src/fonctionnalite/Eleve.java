@@ -33,6 +33,13 @@ public class Eleve {
 		return moyenne;
 	}
 	
+	public void afficherCompteRendu() {
+		System.out.println(nom + " " + prenom + "\n\n");
+		for(int i = 0; i < nbCopie; i++) {
+			System.out.println(copies[i].getNomEvaluation() + " : " + copies[i].getNoteFinale());
+			
+		}
+	}
 	
 	
 
