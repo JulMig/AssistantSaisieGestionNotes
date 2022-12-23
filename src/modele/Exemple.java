@@ -73,7 +73,6 @@ public class Exemple {
 		
 		eleve2.afficherCompteRendu();
 		
-		//////////////////////////////////////////////////////
 		
 		System.out.println("\n////////////////////////////////////////////////////////\n");
 		
@@ -83,6 +82,33 @@ public class Exemple {
 		
 		classe.afficherCompteRendu();
 		
+		System.out.println("\n////////////////////////////////////////////////////////\n");
+		//notre eleve1 possède deux évaluations et on souhaite pouvoir faire passer la première évaluation  au deux autre élèves
+		
+		Copie modeleEval1 = new Copie("TP1", coeffQuestion, 5, 3);
+		Evaluation tp1 = new Evaluation("TP1: Etude de fibre optique", modeleEval1, 3);
+		
+		//On peut maintenant creer des copie pour chaque eleve a partir du modele
+		Copie copie2 = tp1.copierModele(eleve2);
+		Copie copie3 = tp1.copierModele(eleve3);
+		
+		//La copie s'ajoute automatiquement au copie de l'élève et au groupe d'évaluation
+		//On peut également ajouter la copie de l'élève 1 au groupe d'évaluation, cela mettra a jour le nom de l'évaluation
+		//Les copies sont bien indépendantes les une des autres
+		tp1.ajouterCopie(eval1);
+		
+		tp1.afficherCompteRendu();
+		
+		System.out.println("\n__________\n");
+		eleve1.afficherCompteRendu();
+		System.out.println("\n__________\n");
+		copie2.AjouterNiveau(1, 5);
+		copie2.AjouterNiveau(2, 5);
+		copie2.AjouterNiveau(3, 5);
+		copie2.calculerNote();
+		eleve2.afficherCompteRendu();
+		System.out.println("\n__________\n");
+		eleve3.afficherCompteRendu();
 	}
 
 }

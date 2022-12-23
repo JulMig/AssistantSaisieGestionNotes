@@ -64,6 +64,11 @@ public class Copie {
 		
 	}
 	
+	protected Copie CreerModele() {
+		Copie nouvelleCopie = new Copie(nomEvaluation, coeffQuestion, nivMax, nbQuestion);
+		return nouvelleCopie;
+	}
+	
 	private double calculerPoint(int niveau, double coeff) {
 		return (niveau * coeff) / nivMax;
 	}

@@ -13,11 +13,12 @@ public class Evaluation {
 		copieEleve = new Copie[maxCopie];
 		this.maxCopie = maxCopie;
 		this.modele = modele;
+		modele.setNomEvaluation(nomEvaluation);
 	}
 	
 	
 	public void ajouterCopie(Copie copie) {
-		if (maxCopie < nbCopie) {
+		if (maxCopie > nbCopie) {
 			copie.setNomEvaluation(nomEvaluation);
 			copieEleve[nbCopie] = copie;
 			nbCopie += 1;
@@ -31,12 +32,13 @@ public class Evaluation {
 	}
 	
 	public void afficherCompteRendu() {
-		System.out.println(nomEvaluation + "\n\n moyenne de l'evaluation : " + calculerMoyenne());
+		System.out.println(nomEvaluation + "\n\nmoyenne de l'evaluation : " + calculerMoyenne());
 	}
 	
 	public Copie copierModele(Eleve eleve) {
-		Copie copie = null;
-		//TODO
+		Copie copie = modele.CreerModele();
+		eleve.ajouterCopie(copie);
+		this.ajouterCopie(copie);
 		return copie;
 	}
 	
