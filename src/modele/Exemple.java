@@ -9,10 +9,8 @@ public class Exemple {
 	
 	public static void main(String[] args) {
 		
-		//2 evaluations pour un élève
-		
 		Eleve eleve1 = new Eleve("nom1", "prenom1");
-
+        EleveHandicape eleve2 = new EleveHandicape("nom2", "prenom2", "dyspractie", "tiers-temps");
 		
 		double[] coeffQuestion = {2, 3.5, 4.5};
 		
@@ -25,7 +23,7 @@ public class Exemple {
 		eleve1.afficherCompteRendu();
 		
 		//les notes sont toute a 0 par defaut
-		System.out.println("\n");
+		System.out.println("\n__________\n");
 		
 		eval1.AjouterNiveau(1, 0);
 		eval1.AjouterNiveau(2, 6);
@@ -34,12 +32,12 @@ public class Exemple {
 		eval2.AjouterNiveau(1, 5);
 		eval2.AjouterNiveau(3, 5);
 		
-		System.out.println("\n");
+		System.out.println("\n__________\n");
 		
 		eleve1.afficherCompteRendu();
 		//Les notes de s'affiche pas correctement en effet la note finale n'est pas calculé
 		
-		System.out.println("\n");
+		System.out.println("\n__________\n");
 		
 		eval1.calculerNote();
 		eval2.calculerNote();
@@ -52,7 +50,7 @@ public class Exemple {
 		eval1.calculerNote();
 		eval2.calculerNote();
 		
-		System.out.println("\n");
+		System.out.println("\n__________\n");
 		
 		eleve1.afficherCompteRendu();
 		
@@ -61,15 +59,29 @@ public class Exemple {
 		eval1.setCommentaire("A revoir");
 		eval2.setCommentaire("Gros progrès, bravo!");
 		
-		System.out.println("\n");
+		System.out.println("\n__________\n");
 		
 		eval1.afficherCompteRendu();
 		
-		System.out.println("\n");
+		System.out.println("\n__________\n");
 		
 		eval2.afficherCompteRendu();
 		
+		//Pour un élèves en situations de handicape le compte rendu sera plus détaillé, on pourra notemment voir ses aménagements et handicaps
 		
+		System.out.println("\n__________\n");
+		
+		eleve2.afficherCompteRendu();
+		
+		//////////////////////////////////////////////////////
+		
+		System.out.println("\n////////////////////////////////////////////////////////\n");
+		
+		Eleve eleve3 = new Eleve("nom3", "prenom3");
+		Eleve[] eleves = {eleve1, eleve2, eleve3};
+		Classe classe = new Classe("électronique", "Mr prof", eleves);
+		
+		classe.afficherCompteRendu();
 		
 	}
 
