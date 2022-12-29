@@ -1,6 +1,7 @@
 package fonctionnalite;
+import gestion_donnees.GestionnaireDeNote;
 
-public class Copie {
+public class Copie extends GestionnaireDeNote{
 	private String nomEvaluation = "";
 	private double noteFinale = 0;
 	
@@ -13,6 +14,7 @@ public class Copie {
 	private Eleve eleve;
 	
 	public Copie(String nomEvaluation, double[] coeffQuestion, int nivMax, int nbQuestion) {
+		super();
 		this.nomEvaluation = nomEvaluation;
 		this.coeffQuestion = coeffQuestion;
 		this.nivMax = nivMax;
@@ -32,6 +34,10 @@ public class Copie {
 	
 	public double getNoteFinale() {
 		return noteFinale;
+	}
+	
+	public double getNoteFinaleSurVingt() {
+		return calculerProduitEnCroix(noteFinale, calculerSomme(coeffQuestion), 20);
 	}
 	
 	public void AjouterNiveau(int numQuestion, int niveau) {
@@ -93,7 +99,7 @@ public class Copie {
 			System.out.println(nomEvaluation);
 			System.out.println(eleve.getNom() + " " + eleve.getPrenom() + "\n");
 			System.out.println(genererCompteRendu());
-			System.out.println("\nNote Finale: " + noteFinale);
+			System.out.println("\nNote Finale: " + noteFinale +"/" + calculerSomme(coeffQuestion));
 			System.out.println("\nCommentaire: \n" + commentaire);
 	
 		}

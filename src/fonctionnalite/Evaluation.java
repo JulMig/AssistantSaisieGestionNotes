@@ -1,6 +1,7 @@
 package fonctionnalite;
+import gestion_donnees.GestionnaireDeNote;
 
-public class Evaluation {
+public class Evaluation extends GestionnaireDeNote{
 	private String nomEvaluation;
 	private Copie modele;
 	private Copie copieEleve[];
@@ -8,7 +9,7 @@ public class Evaluation {
 	private int maxCopie;
 	
 	public Evaluation(String nomEvaluation, Copie modele, int maxCopie) {
-	
+		super();
 		this.nomEvaluation = nomEvaluation;
 		copieEleve = new Copie[maxCopie];
 		this.maxCopie = maxCopie;
@@ -25,14 +26,20 @@ public class Evaluation {
 		}
 	}
 	
-	public int calculerMoyenne() {
-		int moyenne = 0;
-		//TODO
-		return moyenne;
+	private double[] listerNote() {
+		double notes[] = new double[nbCopie];
+		for(int i = 0; i < nbCopie; i++) {
+			notes[i] = copieEleve[i].getNoteFinaleSurVingt();
+		}
+		return notes;
+	}
+	
+	public double calculerMoyenne() {
+		return super.calculerMoyenne(listerNote());
 	}
 	
 	public void afficherCompteRendu() {
-		System.out.println(nomEvaluation + "\n\nmoyenne de l'evaluation : " + calculerMoyenne());
+		System.out.println(nomEvaluation + "\n\nMoyenne de l'evaluation : " + calculerMoyenne() + "/20");
 	}
 	
 	public Copie copierModele(Eleve eleve) {

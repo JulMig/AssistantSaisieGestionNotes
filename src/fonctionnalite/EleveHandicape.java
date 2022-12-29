@@ -25,7 +25,7 @@ public class EleveHandicape extends Eleve{
 	@Override
 	public void afficherCompteRendu() {
 		super.afficherCompteRendu();
-		System.out.println("\nHandicap: " + handicap + "\nAménagement: " + amenagement);
+		System.out.println("\nHandicap(s): " + handicap + "\nAménagement(s): " + amenagement);
 	}
 
 

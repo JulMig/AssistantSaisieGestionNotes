@@ -1,12 +1,14 @@
 package fonctionnalite;
+import gestion_donnees.GestionnaireDeNote;
 
-public class Eleve {
+public class Eleve extends  GestionnaireDeNote{
 	private String nom;
 	private String prenom;
 	private Copie[] copies = new Copie[50];
 	private int nbCopie = 0;
 	
 	public Eleve(String nom, String prenom) {
+		super();
 		this.nom = nom;
 		this.prenom = prenom;
 	}
@@ -27,10 +29,16 @@ public class Eleve {
 		}
 	}
 		
-	public int calculerMoyenne() {
-		int moyenne = 0;
-		//TODO
-		return moyenne;
+	private double[] listerNote() {
+		double notes[] = new double[nbCopie];
+		for(int i = 0; i < nbCopie; i++) {
+			notes[i] = copies[i].getNoteFinaleSurVingt();
+		}
+		return notes;
+	}
+	
+	public double calculerMoyenne() {
+		return super.calculerMoyenne(listerNote());
 	}
 	
 	public void afficherCompteRendu() {
@@ -39,6 +47,7 @@ public class Eleve {
 			System.out.println(copies[i].getNomEvaluation() + " : " + copies[i].getNoteFinale());
 			
 		}
+		System.out.println("\nMoyenne: " + calculerMoyenne() + "/20");
 	}
 	
 	

@@ -1,6 +1,7 @@
 package fonctionnalite;
+import gestion_donnees.GestionnaireDeNote;
 
-public class Classe {
+public class Classe extends GestionnaireDeNote{
 	private String matiere;
 	private String professeur;
 	
@@ -21,12 +22,19 @@ public class Classe {
 	public String getProfesseur() {
 		return professeur;
 	}
+	
+	private double[] listerMoyenneEleve() {
+		double[] listeMoyenne = new double[eleves.length];
+		
+		for(int i = 0; i < eleves.length; i++) {
+			listeMoyenne[i] = eleves[i].calculerMoyenne();
+		}
+		return listeMoyenne;
+	}
 
 
-	public int calculerMoyenne() {
-		int moyenne = 0;
-		//TODO;
-		return moyenne;
+	public double calculerMoyenne() {
+		return super.calculerMoyenne(listerMoyenneEleve());
 	}
 	
 	public void afficherCompteRendu() {
@@ -34,7 +42,7 @@ public class Classe {
 		for (int i = 0; i < eleves.length; i++) {
 			System.out.println("-" + eleves[i].getNom() + " " + eleves[i].getPrenom());
 		}
-		System.out.println("\nMoyenne de la classe: " + calculerMoyenne());
+		System.out.println("\nMoyenne de la classe: " + calculerMoyenne() + "/20");
 	}
 	
 

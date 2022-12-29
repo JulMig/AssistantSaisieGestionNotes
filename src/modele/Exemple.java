@@ -10,7 +10,7 @@ public class Exemple {
 	public static void main(String[] args) {
 		
 		Eleve eleve1 = new Eleve("nom1", "prenom1");
-        EleveHandicape eleve2 = new EleveHandicape("nom2", "prenom2", "dyspractie", "tiers-temps");
+        EleveHandicape eleve2 = new EleveHandicape("nom2", "prenom2", "dyspraxie", "tiers-temps");
 		
 		double[] coeffQuestion = {2, 3.5, 4.5};
 		
@@ -99,16 +99,26 @@ public class Exemple {
 		
 		tp1.afficherCompteRendu();
 		
-		System.out.println("\n__________\n");
-		eleve1.afficherCompteRendu();
-		System.out.println("\n__________\n");
 		copie2.AjouterNiveau(1, 5);
 		copie2.AjouterNiveau(2, 5);
 		copie2.AjouterNiveau(3, 5);
+		copie3.AjouterNiveau(1, 0);
+		copie3.AjouterNiveau(2, 4);
+		copie3.AjouterNiveau(3, 3);
 		copie2.calculerNote();
+		copie3.calculerNote();
+		
+		System.out.println("\n__________\n");
+		eleve1.afficherCompteRendu();
+		System.out.println("\n__________\n");
 		eleve2.afficherCompteRendu();
 		System.out.println("\n__________\n");
 		eleve3.afficherCompteRendu();
+		System.out.println("\n__________\n");
+		tp1.afficherCompteRendu();
+		System.out.println("\n__________\n");
+		classe.afficherCompteRendu();
+		
 	}
 
 }
