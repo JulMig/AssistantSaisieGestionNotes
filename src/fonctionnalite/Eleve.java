@@ -37,6 +37,10 @@ public class Eleve extends  GestionnaireDeNote{
 		return notes;
 	}
 	
+	public String creerListePourOcamel() {
+		return super.creerListePourOcamel(listerNote());
+	}
+	
 	public double calculerMoyenne() {
 		return super.calculerMoyenne(listerNote());
 	}

@@ -32,6 +32,9 @@ public class Classe extends GestionnaireDeNote{
 		return listeMoyenne;
 	}
 
+	public String creerListePourOcamel() {
+		return super.creerListePourOcamel(listerMoyenneEleve());
+	}
 
 	public double calculerMoyenne() {
 		return super.calculerMoyenne(listerMoyenneEleve());

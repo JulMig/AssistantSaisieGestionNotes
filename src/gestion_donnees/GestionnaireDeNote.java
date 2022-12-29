@@ -20,5 +20,14 @@ public class GestionnaireDeNote {
 		return (valeur*newMax)/max;
 		
 	}
+	
+	public String creerListePourOcamel(double[] valeurs) {
+		String liste = "let valeurs = [\"" + valeurs[0] + "\"";
+		for(int i = 1; i < valeurs.length; i++) {
+			liste += "; \""+valeurs[i] + "\"";
+		}
+		liste += "] ";
+		return liste;
+	}
 
 }

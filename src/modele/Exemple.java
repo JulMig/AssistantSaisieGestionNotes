@@ -119,6 +119,13 @@ public class Exemple {
 		System.out.println("\n__________\n");
 		classe.afficherCompteRendu();
 		
+		//On peut creer des liste pour utiliser les fonction de Ocamel
+		
+		System.out.println(classe.creerListePourOcamel() + "\n");
+		System.out.println(eleve1.creerListePourOcamel() + "\n");
+		System.out.println(tp1.creerListePourOcamel() + "\n");
+		
+		
 	}
 
 }

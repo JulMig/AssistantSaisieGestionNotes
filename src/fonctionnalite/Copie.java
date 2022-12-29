@@ -76,8 +76,9 @@ public class Copie extends GestionnaireDeNote{
 	}
 	
 	private double calculerPoint(int niveau, double coeff) {
-		return (niveau * coeff) / nivMax;
+		return super.calculerProduitEnCroix(niveau, nivMax, coeff);
 	}
+	
 	
 	// Fonctions d'affichage
 	

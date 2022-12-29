@@ -38,6 +38,10 @@ public class Evaluation extends GestionnaireDeNote{
 		return super.calculerMoyenne(listerNote());
 	}
 	
+	public String creerListePourOcamel() {
+		return super.creerListePourOcamel(listerNote());
+	}
+	
 	public void afficherCompteRendu() {
 		System.out.println(nomEvaluation + "\n\nMoyenne de l'evaluation : " + calculerMoyenne() + "/20");
 	}
