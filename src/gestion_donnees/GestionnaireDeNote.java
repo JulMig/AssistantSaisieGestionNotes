@@ -22,9 +22,9 @@ public class GestionnaireDeNote {
 	}
 	
 	public String creerListePourOcamel(double[] valeurs) {
-		String liste = "let valeurs = [\"" + valeurs[0] + "\"";
+		String liste = "let valeurs = [" + valeurs[0];
 		for(int i = 1; i < valeurs.length; i++) {
-			liste += "; \""+valeurs[i] + "\"";
+			liste += "; " + valeurs[i];
 		}
 		liste += "] ";
 		return liste;
