@@ -4,7 +4,7 @@ import gestion_donnees.GestionnaireDeNote;
 public class Evaluation extends GestionnaireDeNote{
 	private String nomEvaluation;
 	private Copie modele;
-	private Copie copieEleve[];
+	private Copie[] copieEleve;
 	private int nbCopie = 0;
 	private int maxCopie;
 	
@@ -47,7 +47,7 @@ public class Evaluation extends GestionnaireDeNote{
 	}
 	
 	public Copie copierModele(Eleve eleve) {
-		Copie copie = modele.CreerModele();
+		Copie copie = modele.creerModele();
 		eleve.ajouterCopie(copie);
 		this.ajouterCopie(copie);
 		return copie;

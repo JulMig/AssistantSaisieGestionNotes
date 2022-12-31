@@ -2,14 +2,14 @@ package fonctionnalite;
 import gestion_donnees.GestionnaireDeNote;
 
 public class Copie extends GestionnaireDeNote{
-	private String nomEvaluation = "";
+	private String nomEvaluation;
 	private double noteFinale = 0;
 	
 	private int nivMax;
 	private int nbQuestion;
-	private double coeffQuestion[];
+	private double[] coeffQuestion;
 	
-	private int nivQuestion[];
+	private int[] nivQuestion;
 	private String commentaire = "";
 	private Eleve eleve;
 	
@@ -40,7 +40,7 @@ public class Copie extends GestionnaireDeNote{
 		return calculerProduitEnCroix(noteFinale, calculerSomme(coeffQuestion), 20);
 	}
 	
-	public void AjouterNiveau(int numQuestion, int niveau) {
+	public void ajouterNiveau(int numQuestion, int niveau) {
 		if (niveauEstValide(niveau) && numQuestionEstValide(numQuestion - 1)) {
 			nivQuestion[numQuestion - 1] = niveau;
 			indiquer("Le niveau de la question " + numQuestion + " a été fixé à " + niveau);
@@ -66,11 +66,9 @@ public class Copie extends GestionnaireDeNote{
 			indiquer("La note finale est " + noteFinale);
 		} else
 			indiquer("La note finale n'a pas pu être calculé, vérifiez que tout les niveaux on était rentré");
-		
-		
 	}
 	
-	protected Copie CreerModele() {
+	protected Copie creerModele() {
 		Copie nouvelleCopie = new Copie(nomEvaluation, coeffQuestion, nivMax, nbQuestion);
 		return nouvelleCopie;
 	}

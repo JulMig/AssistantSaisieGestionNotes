@@ -25,12 +25,12 @@ public class Exemple {
 		//les notes sont toute a 0 par defaut
 		System.out.println("\n__________\n");
 		
-		eval1.AjouterNiveau(1, 0);
-		eval1.AjouterNiveau(2, 6);
-		eval1.AjouterNiveau(3, 0);
+		eval1.ajouterNiveau(1, 0);
+		eval1.ajouterNiveau(2, 6);
+		eval1.ajouterNiveau(3, 0);
 		
-		eval2.AjouterNiveau(1, 5);
-		eval2.AjouterNiveau(3, 5);
+		eval2.ajouterNiveau(1, 5);
+		eval2.ajouterNiveau(3, 5);
 		
 		System.out.println("\n__________\n");
 		
@@ -44,8 +44,8 @@ public class Exemple {
 		
 		//pour calculer les notes d'une evaluation tout les niveaux doivent avoir était entré correctement
 		
-		eval1.AjouterNiveau(2, 3);
-		eval2.AjouterNiveau(2, 5);
+		eval1.ajouterNiveau(2, 3);
+		eval2.ajouterNiveau(2, 5);
 		
 		eval1.calculerNote();
 		eval2.calculerNote();
@@ -99,12 +99,12 @@ public class Exemple {
 		
 		tp1.afficherCompteRendu();
 		
-		copie2.AjouterNiveau(1, 5);
-		copie2.AjouterNiveau(2, 5);
-		copie2.AjouterNiveau(3, 5);
-		copie3.AjouterNiveau(1, 0);
-		copie3.AjouterNiveau(2, 4);
-		copie3.AjouterNiveau(3, 3);
+		copie2.ajouterNiveau(1, 5);
+		copie2.ajouterNiveau(2, 5);
+		copie2.ajouterNiveau(3, 5);
+		copie3.ajouterNiveau(1, 0);
+		copie3.ajouterNiveau(2, 4);
+		copie3.ajouterNiveau(3, 3);
 		copie2.calculerNote();
 		copie3.calculerNote();
 		
